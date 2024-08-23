@@ -81,19 +81,19 @@ const tableauExt = window.tableau.extensions;
         // Append the div to the body
         $('body').append($div);
     
-        // Apply hover effects using JavaScript/jQuery if hoverClasses is defined
+        // Handle hover effects using JavaScript/jQuery if hoverClasses is defined
         if (hoverClasses) {
-            // Use the element's ID to apply hover effects
-            $div.hover(
-                function() { // Mouse over
-                    $(this).addClass(hoverClasses);
-                },
-                function() { // Mouse out
-                    $(this).removeClass(hoverClasses);
-                }
-            );
+            // Ensure the hover class is applied on mouseover and removed on mouseout
+            $div.on('mouseover', function() {
+                $(this).addClass(hoverClasses);
+            });
+    
+            $div.on('mouseout', function() {
+                $(this).removeClass(hoverClasses);
+            });
         }
     }
+
     
 
     $(document).ready(() => {
