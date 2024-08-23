@@ -78,6 +78,7 @@ const tableauExt = window.tableau.extensions;
         let $div = $('<div>', props);
         //Add the class to the HTML Body
         $div.addClass(objClasses);
+        $div.addClass('bg-gradient-4');
         $('body').append($div);
     }
 
