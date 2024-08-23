@@ -51,16 +51,16 @@ const tableauExt = window.tableau.extensions;
     }
 
     async function render(obj) {
-        // Split the name into three parts: id, classes, and hoverClasses
+        // Split the name into id, classes, and hoverClasses
         let objNameAndClasses = obj.name.split("|");
         let objId = objNameAndClasses[0];
         let objClasses = objNameAndClasses.length > 1 ? objNameAndClasses[1] : '';
-        let hoverStyles = objNameAndClasses.length > 2 ? objNameAndClasses[2] : '';
+        let hoverClasses = objNameAndClasses.length > 2 ? objNameAndClasses[2] : '';
     
         // Calculate margins from the classes
         const margin = getMarginFromObjClasses(objClasses);
     
-        // Define CSS properties
+        // Define CSS properties for the element
         let props = {
             id: `${objId}`,
             css: {
@@ -78,21 +78,23 @@ const tableauExt = window.tableau.extensions;
         // Add the normal classes to the div
         $div.addClass(objClasses);
     
-        // Add hover styles via CSS
-        if (hoverStyles) {
-            // Define the CSS for hover effect
-            let hoverStyle = `
-                #${objId}:hover {
-                    ${hoverStyles.split(';').map(rule => rule.trim()).filter(rule => rule).join(';')}
-                }
-            `;
-            // Append the hover CSS to the document
-            $('<style>').text(hoverStyle).appendTo('head');
-        }
-    
         // Append the div to the body
         $('body').append($div);
+    
+        // Apply hover effects using JavaScript/jQuery if hoverClasses is defined
+        if (hoverClasses) {
+            // Use the element's ID to apply hover effects
+            $div.hover(
+                function() { // Mouse over
+                    $(this).addClass(hoverClasses);
+                },
+                function() { // Mouse out
+                    $(this).removeClass(hoverClasses);
+                }
+            );
+        }
     }
+    
 
     $(document).ready(() => {
         tableauExt.initializeAsync().then(() => {
