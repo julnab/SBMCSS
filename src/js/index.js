@@ -77,7 +77,7 @@ const tableauExt = window.tableau.extensions;
     
         // Add the normal classes to the div
         $div.addClass(objClasses);
-    
+        $('body').append($div);
         // Handle hover effects using JavaScript/jQuery if hoverClasses is defined
         if (hoverClasses) {
             // Use jQuery's hover() method for simplicity
@@ -92,7 +92,7 @@ const tableauExt = window.tableau.extensions;
         }
     
         // Append the div to the body
-        $('body').append($div);
+        
     }
 
     
