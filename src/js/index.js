@@ -76,7 +76,7 @@ const tableauExt = window.tableau.extensions;
         let $div = $('<div>', props);
     
         // Add the normal classes to the div
-        $div.addClass(objClasses);
+        $div.addClass("bg-sky-100");
     
         // Add hover styles via CSS
         if (hoverStyles) {
