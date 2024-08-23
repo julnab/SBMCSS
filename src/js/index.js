@@ -82,13 +82,16 @@ const tableauExt = window.tableau.extensions;
         if (hoverClasses) {
             // Attach mouseenter and mouseleave events
             $div.on('mouseenter', function() {
-                $(this).addClass(hoverClasses); // Add hover class on mouse enter
+                alert('Mouse entered');
+                $(this).addClass(hoverClasses);
             });
-    
+            
             $div.on('mouseleave', function() {
-                $(this).removeClass(hoverClasses); // Remove hover class on mouse leave
+                alert('Mouse left');
+                $(this).removeClass(hoverClasses);
             });
         }
+        
     
         // Append the div to the body
         $('body').append($div);
