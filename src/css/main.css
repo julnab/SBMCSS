@@ -1095,7 +1095,7 @@ body {
 }
 
 .shadow-pink {
-  box-shadow: 0 1rem 3rem 0 rgba(25, 20, 147, .15) !important
+  box-shadow: 0 1rem 1rem 1rem rgba(255, 20, 147, .5) !important
 }
 
 .bg-gradient-2 {
