@@ -51,20 +51,16 @@ const tableauExt = window.tableau.extensions;
     }
 
     async function render(obj) {
+        // Split the name into three parts: id, classes, and hoverClasses
         let objNameAndClasses = obj.name.split("|");
-        //Parse the Name and Classes from the Object Name
         let objId = objNameAndClasses[0];
-        let objClasses;
-        //Check if there are classes on the object
-        if (objNameAndClasses.length > 1) {
-            objClasses = objNameAndClasses[1];
-        }
-        //Create the initial object with CSS Props
-        
-        // we need to check for padding classes first, as they must be handled via positioning
-        const margin = getMarginFromObjClasses(objClasses)
-        
-        //Here we set the CSS props to match the location of the objects on the Dashboard
+        let objClasses = objNameAndClasses.length > 1 ? objNameAndClasses[1] : '';
+        let hoverStyles = objNameAndClasses.length > 2 ? objNameAndClasses[2] : '';
+    
+        // Calculate margins from the classes
+        const margin = getMarginFromObjClasses(objClasses);
+    
+        // Define CSS properties
         let props = {
             id: `${objId}`,
             css: {
@@ -74,11 +70,27 @@ const tableauExt = window.tableau.extensions;
                 'width': `${parseInt(obj.size.width) - margin[1] - margin[3]}px`,
                 'height': `${parseInt(obj.size.height) - margin[0] - margin[2]}px`
             }
-        }
+        };
+    
+        // Create the div element with the defined properties
         let $div = $('<div>', props);
-        //Add the class to the HTML Body
+    
+        // Add the normal classes to the div
         $div.addClass(objClasses);
-        $div.addClass('bg-gradient-4');
+    
+        // Add hover styles via CSS
+        if (hoverStyles) {
+            // Define the CSS for hover effect
+            let hoverStyle = `
+                #${objId}:hover {
+                    ${hoverStyles.split(';').map(rule => rule.trim()).filter(rule => rule).join(';')}
+                }
+            `;
+            // Append the hover CSS to the document
+            $('<style>').text(hoverStyle).appendTo('head');
+        }
+    
+        // Append the div to the body
         $('body').append($div);
     }
 
