@@ -1097,3 +1097,7 @@ body {
 .shadow-pink {
   box-shadow: 0 1rem 3rem 0 rgba(25, 20, 147, .15) !important
 }
+
+.bg-gradient-2 {
+  background-image: linear-gradient(180deg, rgb(59 130 246), rgb(45 212 191)) !important
+}
