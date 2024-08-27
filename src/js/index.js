@@ -90,13 +90,6 @@ const tableauExt = window.tableau.extensions;
         //        console.log("Hello from code 5")
         //        $(this).removeClass(hoverClasses);
         //    });
-        $(document).on({
-            mouseenter: function() {console.log('Hello from code 4');},
-            mouseleave: function() {console.log('Hello from code 5'); }
-            }, '.selector');
-        }
-        
-    
         // Append the div to the body
         $('body').append($div);
     }
@@ -111,5 +104,9 @@ const tableauExt = window.tableau.extensions;
             console.log("Broken")
         });
     });
+    $(document).on({
+            mouseenter: function() {console.log('Hello from code 4');},
+            mouseleave: function() {console.log('Hello from code 5'); }
+            }, '.selector');
 
 })();
