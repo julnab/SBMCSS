@@ -56,7 +56,7 @@ const tableauExt = window.tableau.extensions;
         let objId = objNameAndClasses[0];
         let objClasses = objNameAndClasses.length > 1 ? objNameAndClasses[1] : '';
         let hoverClasses = objNameAndClasses.length > 2 ? objNameAndClasses[2] : '';
-    
+        console.log("Hello from code 1")
         // Calculate margins from the classes
         const margin = getMarginFromObjClasses(objClasses);
     
@@ -71,21 +71,23 @@ const tableauExt = window.tableau.extensions;
                 'height': `${parseInt(obj.size.height) - margin[0] - margin[2]}px`
             }
         };
-    
+        console.log("Hello from code 2")
         // Create the div element with the defined properties
         let $div = $('<div>', props);
     
         // Add the normal classes to the div
         $div.addClass(objClasses);
-    
+        console.log("Hello from code 3")
         // Handle hover effects using jQuery's on() method
         if (hoverClasses) {
             // Attach mouseenter and mouseleave events
             $div.on('mouseenter', function() {
+                console.log("Hello from code 4")
                 $(this).addClass(hoverClasses);
             });
             
             $div.on('mouseleave', function() {
+                console.log("Hello from code 5")
                 $(this).removeClass(hoverClasses);
             });
         }
