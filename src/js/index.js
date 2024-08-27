@@ -1,9 +1,12 @@
 let $ = window.$;
 const tableauExt = window.tableau.extensions;
-const testClick = document.querySelector('.bg-gradient-4');
 
-testClick.addEventListener('mouseover', () => {
-    console.log("Mouse move");
+
+window.addEventListener("DOMContentLoaded", (event) => {
+    const testClick = document.querySelector('.bg-gradient-4');
+    if (testClick) {
+      testClick.addEventListener('mouseover', console.log("MOVINGGG"), false);
+    }
 });
 
 //Wrap everything into an anonymous function
