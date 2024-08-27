@@ -104,9 +104,9 @@ const tableauExt = window.tableau.extensions;
             console.log("Broken")
         });
     });
-    $(document).on({
-            mouseenter: function() {console.log('Hello from code 4');},
-            mouseleave: function() {console.log('Hello from code 5'); }
-            }, '.selector');
+    // $(document).on({
+    //         mouseenter: function() {console.log('Hello from code 4');},
+    //         mouseleave: function() {console.log('Hello from code 5'); }
+    //         }, '.selector');
 
 })();
