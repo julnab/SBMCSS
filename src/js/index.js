@@ -79,17 +79,21 @@ const tableauExt = window.tableau.extensions;
         $div.addClass(objClasses);
         console.log("Hello from code 3")
         // Handle hover effects using jQuery's on() method
-        if (hoverClasses) {
+        //if (hoverClasses) {
             // Attach mouseenter and mouseleave events
-            $div.on('mouseover', function() {
-                console.log("Hello from code 4")
-                $(this).addClass(hoverClasses);
-            });
+        //    $div.on('mouseover', function() {
+        //        console.log("Hello from code 4")
+        //        $(this).addClass(hoverClasses);
+        //    });
             
-            $div.on('mouseout', function() {
-                console.log("Hello from code 5")
-                $(this).removeClass(hoverClasses);
-            });
+        //  $div.on('mouseout', function() {
+        //        console.log("Hello from code 5")
+        //        $(this).removeClass(hoverClasses);
+        //    });
+        $(document).on({
+            mouseenter: function() {console.log('Hello from code 4');},
+            mouseleave: function() {console.log('Hello from code 5'); }
+            }, '.selector');
         }
         
     
