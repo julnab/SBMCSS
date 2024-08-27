@@ -81,12 +81,12 @@ const tableauExt = window.tableau.extensions;
         // Handle hover effects using jQuery's on() method
         if (hoverClasses) {
             // Attach mouseenter and mouseleave events
-            $div.on('mouseenter', function() {
+            $div.on('mouseover', function() {
                 console.log("Hello from code 4")
                 $(this).addClass(hoverClasses);
             });
             
-            $div.on('mouseleave', function() {
+            $div.on('mouseout', function() {
                 console.log("Hello from code 5")
                 $(this).removeClass(hoverClasses);
             });
