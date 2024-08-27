@@ -4,8 +4,12 @@ const tableauExt = window.tableau.extensions;
 
 window.addEventListener("DOMContentLoaded", (event) => {
     const testClick = document.querySelector('.bg-gradient-4');
+    const testClickBis = document.querySelector('.bg-gradient-5');
     if (testClick) {
       testClick.addEventListener('mouseover', console.log("MOVINGGG"), false);
+    }
+    if (testClickBis) {
+      testClickBis.addEventListener('mouseover', console.log("MOVINGGG BIS"), false);
     }
 });
 
