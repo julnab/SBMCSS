@@ -1,5 +1,10 @@
 let $ = window.$;
 const tableauExt = window.tableau.extensions;
+const testClick = document.querySelector('.bg-gradient-4');
+
+testClick.addEventListener('mouseover', () => {
+    console.log("Mouse move");
+});
 
 //Wrap everything into an anonymous function
 (function () {
@@ -104,9 +109,9 @@ const tableauExt = window.tableau.extensions;
             console.log("Broken")
         });
     });
-    $(document).on({
-            mouseenter: function() {console.log('Hello from code 4');},
-            mouseleave: function() {console.log('Hello from code 5'); }
-            }, '.selector');
+    // $(document).on({
+    //         mouseenter: function() {console.log('Hello from code 4');},
+    //         mouseleave: function() {console.log('Hello from code 5'); }
+    //         }, '.selector');
 
 })();
