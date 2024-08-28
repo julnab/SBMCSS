@@ -1126,14 +1126,42 @@ body {
   background-image: linear-gradient(180deg, rgb(255, 0, 0), rgb(0, 0, 255)) !important;
 }
 
+.bg-hotel {
+    background-image: linear-gradient(135deg, rgb(226, 228, 238), rgb(79, 105, 128)) !important;
+}
+
 .opacity-10 {
   opacity: 0.1;
 }
 
-.test {
-  background-image: linear-gradient(180deg, rgb(255, 0, 0), rgb(0, 0, 255)) !important;
+.opacity-20 {
+  opacity: 0.2;
 }
 
-.test:hover {
-  border-radius: 1rem !important;
+.opacity-30 {
+  opacity: 0.3;
+}
+
+.opacity-40 {
+  opacity: 0.4;
+}
+
+.opacity-50 {
+  opacity: 0.5;
+}
+
+.opacity-60 {
+  opacity: 0.6;
+}
+
+.opacity-70 {
+  opacity: 0.7;
+}
+
+.opacity-80 {
+  opacity: 0.8;
+}
+
+.opacity-90 {
+  opacity: 0.9;
 }
