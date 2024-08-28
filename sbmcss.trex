@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest manifest-version="0.1" xmlns="http://www.tableau.com/xml/extension_manifest">
-  <dashboard-extension id="com.extensions.tabcss" extension-version="0.1.0">
-    <default-locale>en_US</default-locale>
+  <dashboard-extension id="com.extensions.sbmcss" extension-version="0.1.0">
+    <default-locale>fr_FR</default-locale>
     <name resource-id="name"/>
     <description>Extension Description</description>
-    <author name="Jules Nabet" email="zakovichr@starschema.net" organization="Starschema" website="https://www.starschema.com/"/>
+    <author name="Jules Nabet" email="j.nabet-ext@sbm.mc" organization="Société des Bains de Mer" website="https://www.montecarlosbm.com/"/>
     <min-api-version>1.7</min-api-version>
     <source-location>
       <url>https://julnab.github.io/SBMCSS/main.html</url>
@@ -15,7 +15,7 @@
   </dashboard-extension>
   <resources>
     <resource id="name">
-      <text locale="en_US">TabCSS</text>
+      <text locale="fr_FR">SBMCSS</text>
     </resource>
   </resources>
 </manifest>
